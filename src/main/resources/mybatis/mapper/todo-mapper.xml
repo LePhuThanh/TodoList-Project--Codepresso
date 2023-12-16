@@ -6,5 +6,8 @@
         INSERT INTO TODO(CONTENT, ISCOMPLETED)
         VALUES (#{todo.content}, #{todo.isCompleted})
     </insert>
-
+    <select id="findAll" resultType="com.codepresso.todo.vo.Todo">
+        SELECT *
+        FROM TODO
+    </select>
 </mapper>

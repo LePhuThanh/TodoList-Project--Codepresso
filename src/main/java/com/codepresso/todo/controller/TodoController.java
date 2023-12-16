@@ -22,7 +22,7 @@ public class TodoController {
 
     @GetMapping(value = "/get-todo")
     public List<Todo> getTodoList(){
-        List<Todo> list=null;
+        List<Todo> list = todoService.getTodoList();
         return list;
     }
 

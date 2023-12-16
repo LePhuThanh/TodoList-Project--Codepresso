@@ -30,7 +30,7 @@ public class TodoService {
 
     public List<Todo> getTodoList(){
         //todo todoList 정보들을 반환 하세요
-        return null;
+        return todoMapper.findAll();
     }
 
     public void deleteTodo(int index) {
