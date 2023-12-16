@@ -2,16 +2,30 @@ package com.codepresso.todo.service;
 
 import java.util.List;
 
+import com.codepresso.todo.mapper.TodoMapper;
 import com.codepresso.todo.vo.Todo;
+import org.springframework.stereotype.Service;
 
+@Service
 public class TodoService {
+
+    //Added by PT
+    private TodoMapper todoMapper;
+    public TodoService(TodoMapper todoMapper){
+        this.todoMapper = todoMapper;
+    }
+
 
     private List<Todo> todoList;
 
     //todo 멤버 변수 todoList에 의존성 주입을 하기 위한 코드를 완성하세요
 
+    //Added by PT
     public void addTodo(Todo todo) {
         //todo todoList에 새로운 항목을 추가하세요
+        todo.setIsCompleted("N");
+        todoMapper.save(todo);
+//        todoList.add(todo);
     }
 
     public List<Todo> getTodoList(){
